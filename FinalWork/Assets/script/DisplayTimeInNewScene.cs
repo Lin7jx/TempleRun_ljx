@@ -19,11 +19,12 @@ public class DisplayTimeInNewScene : MonoBehaviour
 
     void Update()
     {
-        
+
         if (TimerManager.Instance != null & flag)
         {
             float elapsedTime = TimerManager.Instance.GetElapsedTime();
-            timeText.text = FormatTime(elapsedTime);
+            var timeFormatted = FormatTime(elapsedTime);
+            timeText.text = timeFormatted;
             flag = false;
         }
     }

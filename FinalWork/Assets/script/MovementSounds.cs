@@ -42,7 +42,7 @@ public class MovementSounds : MonoBehaviour
             audioSource.Play();
         }
         // 如果角色停止奔跑，则停止音效
-        else if (!isMoving && isRunning)
+        else if ((!isMoving && isRunning) || Globals.isPaused)
         {
             isRunning = false;
             audioSource.Stop();
