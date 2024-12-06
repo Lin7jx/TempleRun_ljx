@@ -24,7 +24,10 @@ public class DisplayTime : MonoBehaviour
         if (timer != null)
         {
             float elapsedTime = timer.GetElapsedTime();
-            timeText.text = FormatTime(elapsedTime);
+            var timeFormatted = FormatTime(elapsedTime);
+            Globals.time = timeFormatted;
+            timeText.text = timeFormatted;
+
         }
     }
 
@@ -33,6 +36,6 @@ public class DisplayTime : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(timeInSeconds / 60);
         int seconds = Mathf.FloorToInt(timeInSeconds % 60);
-        return string.Format("耗时："+"{0:00}:{1:00}", minutes, seconds);
+        return string.Format("耗时：" + "{0:00}:{1:00}", minutes, seconds);
     }
 }

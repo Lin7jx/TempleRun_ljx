@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Globals;
 
 public class GameController : MonoBehaviour
 {
-    private bool isPaused = false;
 
     void Update()
     {
